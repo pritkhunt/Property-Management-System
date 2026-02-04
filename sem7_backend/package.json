@@ -1,0 +1,59 @@
+{
+  "name": "property-management-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Property Management System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "init-db": "node scripts/initDatabase.js",
+    "create-admins-table": "node scripts/createAdminsTable.js",
+    "create-test-user": "node scripts/createTestUser.js",
+    "create-admin": "node scripts/createAdminUser.js",
+    "fix-passwords": "node scripts/fixExistingPasswords.js",
+    "update-avatars": "node scripts/updateDefaultAvatars.js",
+    "add-profile-fields": "node scripts/addUserProfileFields.js",
+    "create-uploads": "node scripts/createUploadsFolder.js",
+    "view-db": "node scripts/viewDatabaseRecords.js",
+    "delete-all": "node scripts/deleteAllRecords.js",
+    "create-notifications-table": "node scripts/createNotificationsTable.js",
+    "test-notifications": "node scripts/testNotificationAPI.js",
+    "test-notification-insert": "node scripts/testNotificationInsertion.js",
+    "add-usercode": "node scripts/addUserCodeColumn.js",
+    "fix-usercode-duplicates": "node scripts/addUniqueUserCodeConstraint.js",
+    "create-properties-table": "node scripts/createPropertiesTable.js",
+    "add-property-approval-columns": "node scripts/addPropertyApprovalColumns.js",
+    "check-approvals": "node scripts/checkPropertyApprovals.js",
+    "add-relatedid-notifications": "node scripts/addRelatedIdToNotifications.js",
+    "check-public-properties": "node scripts/checkPublicProperties.js",
+    "create-messages-table": "node scripts/createMessagesTable.js",
+    "create-transactions-table": "node scripts/createTransactionsTable.js"
+  },
+  "keywords": [
+    "property",
+    "management",
+    "api",
+    "backend"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.7",
+    "razorpay": "^2.9.6",
+    "socket.io": "^4.8.1",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

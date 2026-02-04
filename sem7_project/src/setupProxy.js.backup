@@ -1,0 +1,25 @@
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
+module.exports = function(app) {
+  // Only proxy API calls, not static files
+  app.use(
+    '/api',
+    createProxyMiddleware({
+      target: 'https://localhost:7073',
+      changeOrigin: true,
+      secure: false, // Disable SSL verification for development
+      logLevel: 'silent', // Reduce proxy logging
+      onError: (err, req, res) => {
+        // Only log actual API errors, not favicon/manifest requests
+        if (req.url.startsWith('/api')) {
+          console.error('API Proxy Error:', err.message);
+        }
+        res.status(502).json({ 
+          error: 'Backend server is not running',
+          message: 'Please ensure the .NET backend is running on https://localhost:7073',
+          details: err.message
+        });
+      }
+    })
+  );
+};
