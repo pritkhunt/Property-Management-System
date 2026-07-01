@@ -282,7 +282,6 @@ const usePropertyStore = create((set, get) => ({
         islike: rawProperty.IsLike || false,
         views: rawProperty.Views,
         ownerName: rawProperty.OwnerName,
-        agentName: rawProperty.AgentName,
         agent: {
           name: rawProperty.AgentName,
           email: rawProperty.AgentEmail,
